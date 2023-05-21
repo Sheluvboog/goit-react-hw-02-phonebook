@@ -29,13 +29,15 @@ export class App extends Component {
     } else {
       this.setState(oldState => {
         const list = [...oldState.contacts];
-        list.push({
-          id: nanoid(),
-          name: name,
-          number: number,
-        });
-
-        return { contacts: list };
+        const newList = [
+      ...list,
+      {
+        id: nanoid(),
+        name: name,
+        number: number,
+    }
+    ];
+        return { contacts: newList };
       });
     }
   };
